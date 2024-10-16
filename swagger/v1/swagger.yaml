@@ -1,0 +1,51 @@
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  /notifications:
+    post:
+      tags:
+        - Notifications
+      summary: Creates a Notification
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - body
+              properties:
+                title:
+                  type: string
+                  example: New Notification
+                body:
+                  type: string
+                  example: This is the body of the notification.
+      responses:
+        '201':
+          description: Notification successfully received.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Notification successfully received.
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                    example:
+                      - Title can't be blank
+                      - Body can't be blank
