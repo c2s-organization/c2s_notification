@@ -5,7 +5,7 @@ class NotificationsController < ApplicationController
     notification.received_at = Time.current
 
     if notification.save
-      render json: { message: 'Notificação recebida com sucesso.' }, status: :created
+      render json: { message: 'Notification successfully received.' }, status: :created
     else
       render json: { errors: notification.errors.full_messages }, status: :unprocessable_entity
     end
