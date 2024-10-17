@@ -79,6 +79,10 @@ GEM
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
     docile (1.4.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.13.0)
     factory_bot (6.4.5)
       activesupport (>= 5.0.0)
@@ -222,6 +226,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  dotenv-rails
   factory_bot_rails
   faker
   pg (~> 1.1)
