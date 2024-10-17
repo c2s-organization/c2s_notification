@@ -1,5 +1,11 @@
 class NotificationsController < ApplicationController
-  # POST /notifications
+
+  def index
+    @notifications = Notification.all.order(created_at: :desc)
+
+    render json: @notifications
+  end
+
   def create
     notification = Notification.new(notification_params)
     notification.received_at = Time.current
